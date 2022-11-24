@@ -10,6 +10,36 @@ import { SearchEmployeeComponent } from './search-employee/search-employee.compo
 import { EditEmployeeComponent } from './edit-employee/edit-employee.component';
 import { ViewEmployeeComponent } from './view-employee/view-employee.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const myRoute:Routes=[
+  {
+    path:"",
+    component:AdminLoginComponent
+  },
+  {
+    path:"add",
+    component:AddEmployeeComponent
+  },
+  {
+    path:"search",
+    component:SearchEmployeeComponent
+  },
+  {
+    path:"edit",
+    component:EditEmployeeComponent
+  },
+  {
+    path:"delete",
+    component:DeleteEmployeeComponent
+  },
+  {
+    path:"view",
+    component:ViewEmployeeComponent
+  }
+]
+
+
 
 @NgModule({
   declarations: [
@@ -24,7 +54,8 @@ import { NavbarComponent } from './navbar/navbar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(myRoute)
   ],
   providers: [],
   bootstrap: [AppComponent]
